@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: "Inter", sans-serif;
+  --brand-emerald: #059669;
+  --brand-emerald-hover: #047857;
+  --brand-teal: #0d9488;
+  --brand-green: #16a34a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-inter); }
+
+::selection { background: var(--brand-emerald); color: #fff; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #ecfdf5; }
+::-webkit-scrollbar-thumb { background: var(--brand-emerald); border-radius: 3px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #059669, #0d9488, #16a34a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.section-alt { background: #ecfdf5; }
+
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-shadow:hover {
+  box-shadow: 0 8px 32px rgba(5,150,105,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.btn-emerald {
+  background: var(--brand-emerald);
+  color: white;
+  transition: background 0.2s;
 }
+.btn-emerald:hover:not(:disabled) { background: var(--brand-emerald-hover); }
+
+.btn-outline-emerald {
+  background: transparent;
+  color: var(--brand-emerald);
+  border: 1.5px solid rgba(5,150,105,0.35);
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-outline-emerald:hover:not(:disabled) {
+  background: rgba(5,150,105,0.06);
+  border-color: var(--brand-emerald);
+}
+
+/* Password strength bar */
+.strength-bar {
+  height: 6px;
+  border-radius: 99px;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* Monospace password display */
+.password-display {
+  font-family: "Courier New", "Cascadia Code", "Fira Code", monospace;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  word-break: break-all;
+}
+
+@keyframes flash-copy {
+  0%   { background: rgba(5,150,105,0.12); }
+  100% { background: transparent; }
+}
+.copied-flash { animation: flash-copy 0.5s ease; }
