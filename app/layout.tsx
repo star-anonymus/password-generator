@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
@@ -23,11 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style: {
               background: "#ffffff",
               color: "#0f172a",
-              border: "1px solid rgba(5,150,105,0.2)",
+              border: "1px solid rgba(30,95,116,0.2)",
               borderRadius: "12px",
               boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
             },
-            success: { iconTheme: { primary: "#059669", secondary: "#fff" } },
+            success: { iconTheme: { primary: "#1e5f74", secondary: "#fff" } },
             error:   { iconTheme: { primary: "#ef4444", secondary: "#fff" } },
           }}
         />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useCallback, useEffect } from "react";
 import { Copy, RefreshCw, Check } from "lucide-react";
 import toast from "react-hot-toast";
@@ -80,7 +80,7 @@ export default function PassphraseGenerator() {
           </div>
 
           {/* Passphrase display */}
-          <div className="rounded-2xl border border-[#059669]/20 bg-white p-6 mb-5 card-shadow">
+          <div className="rounded-2xl border border-[#1e5f74]/20 bg-white p-6 mb-5 card-shadow">
             <p className="text-2xl font-bold text-slate-800 break-all leading-relaxed mb-4">{passphrase}</p>
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-400">~{entropy} bits entropy</span>
@@ -91,7 +91,7 @@ export default function PassphraseGenerator() {
                 </button>
                 <button onClick={copy}
                   className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                    copied ? "bg-[#059669]/15 text-[#059669]" : "btn-emerald"
+                    copied ? "bg-[#1e5f74]/15 text-[#1e5f74]" : "btn-emerald"
                   }`}>
                   {copied ? <><Check size={14} /> Copied!</> : <><Copy size={14} /> Copy</>}
                 </button>
@@ -106,11 +106,11 @@ export default function PassphraseGenerator() {
             <div className="mb-5">
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm font-semibold text-slate-700">Number of words</label>
-                <span className="text-sm font-bold text-[#059669] bg-[#059669]/10 px-3 py-0.5 rounded-full">{wordCount}</span>
+                <span className="text-sm font-bold text-[#1e5f74] bg-[#1e5f74]/10 px-3 py-0.5 rounded-full">{wordCount}</span>
               </div>
               <input type="range" min={2} max={8} value={wordCount}
                 onChange={(e) => setWordCount(Number(e.target.value))}
-                className="w-full accent-[#059669] h-2 rounded-full cursor-pointer" />
+                className="w-full accent-[#1e5f74] h-2 rounded-full cursor-pointer" />
               <div className="flex justify-between text-xs text-slate-400 mt-1"><span>2</span><span>8</span></div>
             </div>
 
@@ -121,8 +121,8 @@ export default function PassphraseGenerator() {
                   <button key={sep} onClick={() => setSeparator(sep)}
                     className={`px-4 py-2 rounded-lg border text-sm font-mono font-semibold transition-all ${
                       separator === sep
-                        ? "border-[#059669] bg-[#059669]/10 text-[#059669]"
-                        : "border-slate-200 text-slate-500 hover:border-[#059669]/30"
+                        ? "border-[#1e5f74] bg-[#1e5f74]/10 text-[#1e5f74]"
+                        : "border-slate-200 text-slate-500 hover:border-[#1e5f74]/30"
                     }`}>
                     {sep === " " ? "space" : sep}
                   </button>
@@ -138,11 +138,11 @@ export default function PassphraseGenerator() {
                 <button key={label} onClick={() => set(!value)}
                   className={`flex items-center gap-2.5 w-full px-4 py-2.5 rounded-xl border text-sm font-medium transition-all text-left ${
                     value
-                      ? "border-[#059669] bg-[#059669]/08 text-[#059669]"
-                      : "border-slate-200 bg-white text-slate-500 hover:border-[#059669]/30"
+                      ? "border-[#1e5f74] bg-[#1e5f74]/08 text-[#1e5f74]"
+                      : "border-slate-200 bg-white text-slate-500 hover:border-[#1e5f74]/30"
                   }`}>
                   <span className={`w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
-                    value ? "border-[#059669] bg-[#059669]" : "border-slate-300"
+                    value ? "border-[#1e5f74] bg-[#1e5f74]" : "border-slate-300"
                   }`}>
                     {value && <Check size={10} className="text-white" strokeWidth={3} />}
                   </span>

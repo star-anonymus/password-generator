@@ -1,57 +1,79 @@
 "use client";
 import { useId } from "react";
 
-interface Props {
-  size?: number;
-  iconOnly?: boolean;
-}
+const DARK  = "#1e5f74";
+const GREEN = "#5ca834";
+
+interface Props { size?: number; iconOnly?: boolean }
 
 export default function SecurePassLogo({ size = 40, iconOnly = false }: Props) {
   const id = useId().replace(/:/g, "");
 
   return (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.28 }}>
-      <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.24 }}>
+      {/* Shield with rotating C + keyhole — matches logo top-left "Password Generation" variant */}
+      <svg width={size} height={size} viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id={`${id}-grad`} x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#059669" />
-            <stop offset="100%" stopColor="#0d9488" />
+          <linearGradient id={`${id}-sh`} x1="4" y1="4" x2="36" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor={DARK} />
+            <stop offset="100%" stopColor="#164a5a" />
           </linearGradient>
         </defs>
-        {/* Rounded square bg */}
-        <rect width="40" height="40" rx="10" fill={`url(#${id}-grad)`} />
-        {/* Shield shape */}
-        <path d="M20 8 L30 12 L30 22 C30 27.5 25.5 32 20 33 C14.5 32 10 27.5 10 22 L10 12 Z"
-          fill="rgba(255,255,255,0.18)" />
-        <path d="M20 10 L28 13.5 L28 22 C28 26.5 24.5 30.5 20 31.5 C15.5 30.5 12 26.5 12 22 L12 13.5 Z"
-          fill="white" />
-        {/* Lock body */}
-        <rect x="15.5" y="20" width="9" height="7" rx="1.5" fill="#059669" />
-        {/* Lock shackle */}
-        <path d="M17 20 L17 17.5 C17 15.5 23 15.5 23 17.5 L23 20"
-          stroke="#059669" strokeWidth="2" strokeLinecap="round" fill="none" />
-        {/* Keyhole */}
-        <circle cx="20" cy="23" r="1.2" fill="white" />
-        <rect x="19.3" y="23.8" width="1.4" height="2" rx="0.5" fill="white" />
+
+        {/* Shield outer */}
+        <path
+          d="M 20 2 L 36 8 L 36 24 C 36 34 28.5 40 20 43 C 11.5 40 4 34 4 24 L 4 8 Z"
+          fill={`url(#${id}-sh)`}
+        />
+
+        {/* Shield inner highlight */}
+        <path
+          d="M 20 6 L 33 11 L 33 24 C 33 32 26.5 37.5 20 40 C 13.5 37.5 7 32 7 24 L 7 11 Z"
+          fill="rgba(255,255,255,0.1)"
+        />
+
+        {/* Circular rotating C arrows (password generation symbol) */}
+        {/* Top arc (going right) */}
+        <path
+          d="M 13 20 A 8 8 0 0 1 27 20"
+          stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"
+        />
+        {/* Arrow head on top arc */}
+        <path d="M 24.5 16.5 L 27 20 L 23.5 20.5" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+
+        {/* Bottom arc (going left) */}
+        <path
+          d="M 27 24 A 8 8 0 0 1 13 24"
+          stroke={GREEN} strokeWidth="2.5" fill="none" strokeLinecap="round"
+        />
+        {/* Arrow head on bottom arc */}
+        <path d="M 15.5 27.5 L 13 24 L 16.5 23.5" stroke={GREEN} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+
+        {/* Central keyhole */}
+        <circle cx="20" cy="22" r="2.5" fill="white" />
+        <path d="M 18.8 23.5 L 18.8 27 L 21.2 27 L 21.2 23.5" fill="white" />
       </svg>
 
       {!iconOnly && (
         <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+          {/* "SecurePass" — mixed case matching logo, Secure dark + Pass green */}
           <span style={{
             fontSize: size * 0.48,
             fontWeight: 800,
-            letterSpacing: "-0.02em",
-            color: "#059669",
+            letterSpacing: "-0.01em",
+            display: "inline-block",
           }}>
-            Secure<span style={{ color: "#0d9488" }}>Pass</span>
+            <span style={{ color: DARK }}>Secure</span>
+            <span style={{ color: GREEN }}>Pass</span>
           </span>
+          {/* Green uppercase subtitle matching logo */}
           <span style={{
-            fontSize: size * 0.22,
-            fontWeight: 600,
-            letterSpacing: "0.08em",
-            color: "#94a3b8",
+            fontSize: size * 0.18,
+            fontWeight: 700,
+            letterSpacing: "0.14em",
+            color: GREEN,
             textTransform: "uppercase" as const,
-            marginTop: 1,
+            marginTop: 2,
           }}>
             Password Tools
           </span>

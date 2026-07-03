@@ -1,11 +1,11 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
   --font-inter: "Inter", sans-serif;
-  --brand-emerald: #059669;
-  --brand-emerald-hover: #047857;
-  --brand-teal: #0d9488;
-  --brand-green: #16a34a;
+  --brand-emerald: #1e5f74;
+  --brand-emerald-hover: #1a5266;
+  --brand-teal: #5ca834;
+  --brand-green: #4a9628;
 }
 
 html { scroll-behavior: smooth; }
@@ -14,24 +14,24 @@ body { font-family: var(--font-inter); }
 ::selection { background: var(--brand-emerald); color: #fff; }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #ecfdf5; }
+::-webkit-scrollbar-track { background: #eaf6f4; }
 ::-webkit-scrollbar-thumb { background: var(--brand-emerald); border-radius: 3px; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #059669, #0d9488, #16a34a);
+  background: linear-gradient(135deg, #1e5f74, #5ca834, #4a9628);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.section-alt { background: #ecfdf5; }
+.section-alt { background: #eaf6f4; }
 
 .card-shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .card-shadow:hover {
-  box-shadow: 0 8px 32px rgba(5,150,105,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 32px rgba(30,95,116,0.12), 0 2px 8px rgba(0,0,0,0.06);
   transform: translateY(-2px);
 }
 
@@ -45,11 +45,11 @@ body { font-family: var(--font-inter); }
 .btn-outline-emerald {
   background: transparent;
   color: var(--brand-emerald);
-  border: 1.5px solid rgba(5,150,105,0.35);
+  border: 1.5px solid rgba(30,95,116,0.35);
   transition: background 0.2s, border-color 0.2s;
 }
 .btn-outline-emerald:hover:not(:disabled) {
-  background: rgba(5,150,105,0.06);
+  background: rgba(30,95,116,0.06);
   border-color: var(--brand-emerald);
 }
 
@@ -69,7 +69,7 @@ body { font-family: var(--font-inter); }
 }
 
 @keyframes flash-copy {
-  0%   { background: rgba(5,150,105,0.12); }
+  0%   { background: rgba(30,95,116,0.12); }
   100% { background: transparent; }
 }
 .copied-flash { animation: flash-copy 0.5s ease; }
@@ -82,7 +82,7 @@ body { font-family: var(--font-inter); }
 
 /* === Professional layout additions === */
 .hero-pattern {
-  background-image: radial-gradient(rgba(5,150,105,0.065) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(30,95,116,0.065) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 .stat-strip-item {
@@ -91,34 +91,34 @@ body { font-family: var(--font-inter); }
 }
 .step-num {
   width: 52px; height: 52px; border-radius: 9999px;
-  background: linear-gradient(135deg, #059669, #0d9488);
+  background: linear-gradient(135deg, #1e5f74, #5ca834);
   color: white; font-size: 20px; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(5,150,105,0.35);
+  box-shadow: 0 4px 16px rgba(30,95,116,0.35);
   flex-shrink: 0;
 }
 .tip-card {
-  border: 1.5px solid rgba(5,150,105,0.14);
+  border: 1.5px solid rgba(30,95,116,0.14);
   border-radius: 16px; padding: 22px; background: white;
   transition: all 0.25s;
 }
 .tip-card:hover {
-  border-color: rgba(5,150,105,0.4);
-  box-shadow: 0 8px 24px rgba(5,150,105,0.1);
+  border-color: rgba(30,95,116,0.4);
+  box-shadow: 0 8px 24px rgba(30,95,116,0.1);
   transform: translateY(-2px);
 }
 .myth-card {
   border-radius: 16px; overflow: hidden; background: white;
-  border: 1.5px solid rgba(5,150,105,0.14);
+  border: 1.5px solid rgba(30,95,116,0.14);
 }
 .faq-item {
-  border: 1.5px solid rgba(5,150,105,0.14);
+  border: 1.5px solid rgba(30,95,116,0.14);
   border-radius: 16px; overflow: hidden; background: white;
   transition: border-color 0.2s;
 }
-.faq-item:hover { border-color: rgba(5,150,105,0.35); }
+.faq-item:hover { border-color: rgba(30,95,116,0.35); }
 .cta-gradient {
-  background: linear-gradient(135deg, #047857 0%, #059669 40%, #0d9488 100%);
+  background: linear-gradient(135deg, #1a5266 0%, #1e5f74 40%, #5ca834 100%);
 }
 .stat-badge-red {
   background: rgba(239,68,68,0.08);

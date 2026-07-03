@@ -1,9 +1,9 @@
-import { Shield, Lock, Zap } from "lucide-react";
+﻿import { Shield, Lock, Zap } from "lucide-react";
 import SecurePassLogo from "./SecurePassLogo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#059669]/12 bg-[#ecfdf5] py-12 px-6 mt-20">
+    <footer className="border-t border-[#1e5f74]/12 bg-[#eaf6f4] py-12 px-6 mt-20">
       <div className="max-w-5xl mx-auto">
         <div className="grid sm:grid-cols-3 gap-8 mb-10">
           <div>
@@ -21,7 +21,7 @@ export default function Footer() {
                 ["Passphrase Generator","/passphrase"],
                 ["PIN Generator",       "/pin-generator"],
               ].map(([l, h]) => (
-                <li key={h}><a href={h} className="hover:text-[#059669] transition-colors">{l}</a></li>
+                <li key={h}><a href={h} className="hover:text-[#1e5f74] transition-colors">{l}</a></li>
               ))}
             </ul>
           </div>
@@ -34,20 +34,20 @@ export default function Footer() {
                 ["zap",    "Instant generation, works offline"],
               ] as const).map(([type, t], i) => (
                 <li key={i} className="flex items-start gap-2">
-                  {type === "shield" && <Shield size={14} className="mt-0.5 shrink-0 text-[#059669]" />}
-                  {type === "lock"   && <Lock   size={14} className="mt-0.5 shrink-0 text-[#059669]" />}
-                  {type === "zap"    && <Zap    size={14} className="mt-0.5 shrink-0 text-[#0d9488]" />}
+                  {type === "shield" && <Shield size={14} className="mt-0.5 shrink-0 text-[#1e5f74]" />}
+                  {type === "lock"   && <Lock   size={14} className="mt-0.5 shrink-0 text-[#1e5f74]" />}
+                  {type === "zap"    && <Zap    size={14} className="mt-0.5 shrink-0 text-[#5ca834]" />}
                   {t}
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className="border-t border-[#059669]/12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+        <div className="border-t border-[#1e5f74]/12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
           <p>© {new Date().getFullYear()} SecurePass. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            <Lock size={13} className="text-[#059669]" />
-            <span className="text-[#059669] font-medium">Cryptographically secure</span> — powered by Web Crypto API
+            <Lock size={13} className="text-[#1e5f74]" />
+            <span className="text-[#1e5f74] font-medium">Cryptographically secure</span> — powered by Web Crypto API
           </p>
         </div>
       </div>

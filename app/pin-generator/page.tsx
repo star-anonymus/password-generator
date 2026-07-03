@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useCallback, useEffect } from "react";
 import { Copy, RefreshCw, Check } from "lucide-react";
 import toast from "react-hot-toast";
@@ -68,21 +68,21 @@ export default function PinGenerator() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-sm font-semibold text-slate-700">PIN length</label>
-                  <span className="text-sm font-bold text-[#059669] bg-[#059669]/10 px-3 py-0.5 rounded-full">{length}</span>
+                  <span className="text-sm font-bold text-[#1e5f74] bg-[#1e5f74]/10 px-3 py-0.5 rounded-full">{length}</span>
                 </div>
                 <input type="range" min={4} max={12} value={length}
                   onChange={(e) => setLength(Number(e.target.value))}
-                  className="w-full accent-[#059669] h-2 rounded-full cursor-pointer" />
+                  className="w-full accent-[#1e5f74] h-2 rounded-full cursor-pointer" />
                 <div className="flex justify-between text-xs text-slate-400 mt-1"><span>4</span><span>12</span></div>
               </div>
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-sm font-semibold text-slate-700">How many PINs</label>
-                  <span className="text-sm font-bold text-[#059669] bg-[#059669]/10 px-3 py-0.5 rounded-full">{count}</span>
+                  <span className="text-sm font-bold text-[#1e5f74] bg-[#1e5f74]/10 px-3 py-0.5 rounded-full">{count}</span>
                 </div>
                 <input type="range" min={1} max={20} value={count}
                   onChange={(e) => setCount(Number(e.target.value))}
-                  className="w-full accent-[#059669] h-2 rounded-full cursor-pointer" />
+                  className="w-full accent-[#1e5f74] h-2 rounded-full cursor-pointer" />
                 <div className="flex justify-between text-xs text-slate-400 mt-1"><span>1</span><span>20</span></div>
               </div>
             </div>
@@ -95,11 +95,11 @@ export default function PinGenerator() {
                 <button key={label} onClick={() => set(!value)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                     value
-                      ? "border-[#059669] bg-[#059669]/08 text-[#059669]"
-                      : "border-slate-200 bg-white text-slate-500 hover:border-[#059669]/30"
+                      ? "border-[#1e5f74] bg-[#1e5f74]/08 text-[#1e5f74]"
+                      : "border-slate-200 bg-white text-slate-500 hover:border-[#1e5f74]/30"
                   }`}>
                   <span className={`w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
-                    value ? "border-[#059669] bg-[#059669]" : "border-slate-300"
+                    value ? "border-[#1e5f74] bg-[#1e5f74]" : "border-slate-300"
                   }`}>
                     {value && <Check size={10} className="text-white" strokeWidth={3} />}
                   </span>
@@ -120,7 +120,7 @@ export default function PinGenerator() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="font-bold text-slate-800 text-sm">{pins.length} Generated PINs</h2>
               <button onClick={copyAll}
-                className="flex items-center gap-1.5 text-xs font-semibold text-[#059669] hover:text-[#047857]">
+                className="flex items-center gap-1.5 text-xs font-semibold text-[#1e5f74] hover:text-[#1a5266]">
                 <Copy size={12} /> Copy All
               </button>
             </div>
@@ -130,7 +130,7 @@ export default function PinGenerator() {
                   <span className="font-mono text-2xl font-bold text-slate-800 tracking-widest">{pin}</span>
                   <button onClick={() => copy(pin, i)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      copiedIndex === i ? "bg-[#059669]/15 text-[#059669]" : "btn-emerald"
+                      copiedIndex === i ? "bg-[#1e5f74]/15 text-[#1e5f74]" : "btn-emerald"
                     }`}>
                     {copiedIndex === i ? <><Check size={12} /> Copied!</> : <><Copy size={12} /> Copy</>}
                   </button>

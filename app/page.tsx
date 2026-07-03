@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useCallback, useEffect } from "react";
 import {
   Copy, RefreshCw, Check, Shield, Zap, Lock, Eye, EyeOff,
@@ -65,8 +65,8 @@ function getStrength(entropy: number): { label: string; color: string; bg: strin
   if (entropy < 28)  return { label: "Very Weak",  color: "#ef4444", bg: "#fef2f2", width: "15%",  pill: "bg-red-100 text-red-600 border-red-200" };
   if (entropy < 36)  return { label: "Weak",       color: "#f97316", bg: "#fff7ed", width: "30%",  pill: "bg-orange-100 text-orange-600 border-orange-200" };
   if (entropy < 60)  return { label: "Fair",       color: "#eab308", bg: "#fefce8", width: "50%",  pill: "bg-yellow-100 text-yellow-600 border-yellow-200" };
-  if (entropy < 80)  return { label: "Strong",     color: "#059669", bg: "#ecfdf5", width: "75%",  pill: "bg-emerald-100 text-emerald-700 border-emerald-200" };
-  return               { label: "Very Strong", color: "#0d9488", bg: "#f0fdfa", width: "100%", pill: "bg-teal-100 text-teal-700 border-teal-200" };
+  if (entropy < 80)  return { label: "Strong",     color: "#1e5f74", bg: "#eaf6f4", width: "75%",  pill: "bg-emerald-100 text-emerald-700 border-emerald-200" };
+  return               { label: "Very Strong", color: "#5ca834", bg: "#f0fdfa", width: "100%", pill: "bg-teal-100 text-teal-700 border-teal-200" };
 }
 
 const FAQ_ITEMS = [
@@ -150,11 +150,11 @@ export default function PasswordGenerator() {
           {/* dot grid */}
           <div className="hero-pattern absolute inset-0 z-0 pointer-events-none" />
           {/* orb */}
-          <div className="absolute -top-32 -right-20 w-[450px] h-[450px] rounded-full bg-[#059669]/10 blur-[100px] pointer-events-none" />
+          <div className="absolute -top-32 -right-20 w-[450px] h-[450px] rounded-full bg-[#1e5f74]/10 blur-[100px] pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto text-center">
             {/* badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#059669]/20 shadow-sm text-[#059669] text-xs font-bold mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#1e5f74]/20 shadow-sm text-[#1e5f74] text-xs font-bold mb-5">
               🔐 Powered by Web Crypto API · Military-Grade Randomness
             </div>
 
@@ -172,7 +172,7 @@ export default function PasswordGenerator() {
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-slate-400">
               {["Web Crypto API", "Zero data sent", "Works offline", "Always free"].map((item) => (
                 <span key={item} className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#059669] inline-block" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1e5f74] inline-block" />
                   {item}
                 </span>
               ))}
@@ -184,7 +184,7 @@ export default function PasswordGenerator() {
         <section className="max-w-2xl mx-auto px-6 pb-16">
 
           {/* Password display card */}
-          <div className="rounded-3xl border border-[#059669]/20 bg-white p-7 mb-5 shadow-[0_4px_24px_rgba(5,150,105,0.08)]">
+          <div className="rounded-3xl border border-[#1e5f74]/20 bg-white p-7 mb-5 shadow-[0_4px_24px_rgba(30,95,116,0.08)]">
             <div className="flex items-start justify-between gap-3 mb-5">
               <div className="flex-1 min-w-0">
                 <p className="password-display text-slate-900 break-all leading-relaxed text-xl">
@@ -197,12 +197,12 @@ export default function PasswordGenerator() {
                   {show ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
                 <button onClick={generate}
-                  className="p-2.5 rounded-xl text-[#059669] hover:bg-[#059669]/10 transition-all">
+                  className="p-2.5 rounded-xl text-[#1e5f74] hover:bg-[#1e5f74]/10 transition-all">
                   <RefreshCw size={18} />
                 </button>
                 <button onClick={() => copy()}
                   className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold transition-all ${
-                    copied ? "bg-[#059669]/15 text-[#059669]" : "btn-emerald"
+                    copied ? "bg-[#1e5f74]/15 text-[#1e5f74]" : "btn-emerald"
                   }`}>
                   {copied ? <><Check size={15} /> Copied!</> : <><Copy size={15} /> Copy</>}
                 </button>
@@ -231,11 +231,11 @@ export default function PasswordGenerator() {
             <div className="mb-7">
               <div className="flex items-center justify-between mb-3">
                 <label className="text-sm font-semibold text-slate-700">Password Length</label>
-                <span className="text-sm font-black text-[#059669] bg-[#059669]/10 px-4 py-1 rounded-full tabular-nums">{length}</span>
+                <span className="text-sm font-black text-[#1e5f74] bg-[#1e5f74]/10 px-4 py-1 rounded-full tabular-nums">{length}</span>
               </div>
               <input type="range" min={4} max={128} value={length}
                 onChange={(e) => setLength(Number(e.target.value))}
-                className="w-full accent-[#059669] h-2 rounded-full cursor-pointer" />
+                className="w-full accent-[#1e5f74] h-2 rounded-full cursor-pointer" />
               <div className="flex justify-between text-xs text-slate-400 mt-1.5 font-medium"><span>4</span><span>128</span></div>
             </div>
 
@@ -250,11 +250,11 @@ export default function PasswordGenerator() {
                 <button key={label} onClick={() => toggle(set, value, others)}
                   className={`flex items-center gap-2.5 px-4 py-3 rounded-2xl border text-sm font-semibold transition-all text-left ${
                     value
-                      ? "border-[#059669] bg-[#059669]/08 text-[#059669]"
-                      : "border-slate-200 bg-slate-50 text-slate-500 hover:border-[#059669]/30 hover:bg-slate-100"
+                      ? "border-[#1e5f74] bg-[#1e5f74]/08 text-[#1e5f74]"
+                      : "border-slate-200 bg-slate-50 text-slate-500 hover:border-[#1e5f74]/30 hover:bg-slate-100"
                   }`}>
                   <span className={`w-4 h-4 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${
-                    value ? "border-[#059669] bg-[#059669]" : "border-slate-300"
+                    value ? "border-[#1e5f74] bg-[#1e5f74]" : "border-slate-300"
                   }`}>
                     {value && <Check size={10} className="text-white" strokeWidth={3} />}
                   </span>
@@ -268,11 +268,11 @@ export default function PasswordGenerator() {
               <button onClick={() => setExcludeAmbiguous(!excludeAmbiguous)}
                 className={`flex items-center gap-2.5 w-full px-4 py-3 rounded-2xl border text-sm font-semibold transition-all text-left ${
                   excludeAmbiguous
-                    ? "border-[#059669] bg-[#059669]/08 text-[#059669]"
-                    : "border-slate-200 bg-white text-slate-500 hover:border-[#059669]/30"
+                    ? "border-[#1e5f74] bg-[#1e5f74]/08 text-[#1e5f74]"
+                    : "border-slate-200 bg-white text-slate-500 hover:border-[#1e5f74]/30"
                 }`}>
                 <span className={`w-4 h-4 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${
-                  excludeAmbiguous ? "border-[#059669] bg-[#059669]" : "border-slate-300"
+                  excludeAmbiguous ? "border-[#1e5f74] bg-[#1e5f74]" : "border-slate-300"
                 }`}>
                   {excludeAmbiguous && <Check size={10} className="text-white" strokeWidth={3} />}
                 </span>
@@ -286,7 +286,7 @@ export default function PasswordGenerator() {
                   placeholder="e.g. @#$"
                   value={customExclude}
                   onChange={(e) => setCustomExclude(e.target.value)}
-                  className="flex-1 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#059669] focus:ring-2 focus:ring-[#059669]/10 transition-all"
+                  className="flex-1 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-[#1e5f74] focus:ring-2 focus:ring-[#1e5f74]/10 transition-all"
                 />
               </div>
             </div>
@@ -294,7 +294,7 @@ export default function PasswordGenerator() {
 
           {/* Generate button */}
           <button onClick={generate}
-            className="w-full py-4 rounded-2xl text-base font-bold btn-emerald flex items-center justify-center gap-2 mb-6 shadow-[0_6px_24px_rgba(5,150,105,0.3)] hover:shadow-[0_8px_32px_rgba(5,150,105,0.4)] transition-all">
+            className="w-full py-4 rounded-2xl text-base font-bold btn-emerald flex items-center justify-center gap-2 mb-6 shadow-[0_6px_24px_rgba(30,95,116,0.3)] hover:shadow-[0_8px_32px_rgba(30,95,116,0.4)] transition-all">
             <RefreshCw size={18} /> Generate New Password
           </button>
 
@@ -309,7 +309,7 @@ export default function PasswordGenerator() {
                 { label: "Maximum (32)",     fn: () => { setLength(32); setUseUpper(true);  setUseLower(true);  setUseDigits(true); setUseSymbols(true);  } },
               ].map(({ label, fn }) => (
                 <button key={label} onClick={fn}
-                  className="px-4 py-1.5 rounded-full border border-[#059669]/25 text-xs font-semibold text-[#059669] hover:bg-[#059669]/08 hover:border-[#059669]/50 transition-all">
+                  className="px-4 py-1.5 rounded-full border border-[#1e5f74]/25 text-xs font-semibold text-[#1e5f74] hover:bg-[#1e5f74]/08 hover:border-[#1e5f74]/50 transition-all">
                   {label}
                 </button>
               ))}
@@ -325,7 +325,7 @@ export default function PasswordGenerator() {
                   <li key={i} className="flex items-center justify-between gap-3 py-2 px-3 rounded-xl hover:bg-slate-50 transition-colors">
                     <span className="font-mono text-xs text-slate-500 truncate">{pw}</span>
                     <button onClick={() => copy(pw)}
-                      className="flex items-center gap-1 text-xs text-[#059669] hover:text-[#047857] font-semibold shrink-0 transition-colors">
+                      className="flex items-center gap-1 text-xs text-[#1e5f74] hover:text-[#1a5266] font-semibold shrink-0 transition-colors">
                       <Copy size={11} /> Copy
                     </button>
                   </li>
@@ -342,7 +342,7 @@ export default function PasswordGenerator() {
               { icon: Zap,    text: "Instant & free",    sub: "No account needed" },
             ].map(({ icon: Icon, text, sub }) => (
               <div key={text} className="flex flex-col items-center gap-1.5">
-                <div className="w-9 h-9 rounded-xl bg-[#059669]/10 text-[#059669] flex items-center justify-center">
+                <div className="w-9 h-9 rounded-xl bg-[#1e5f74]/10 text-[#1e5f74] flex items-center justify-center">
                   <Icon size={16} />
                 </div>
                 <p className="text-xs font-semibold text-slate-700">{text}</p>
@@ -353,7 +353,7 @@ export default function PasswordGenerator() {
         </section>
 
         {/* ── SECTION C: BREACH STATS ── */}
-        <section className="bg-[#ecfdf5] border-y border-[#059669]/12 py-16 px-6">
+        <section className="bg-[#eaf6f4] border-y border-[#1e5f74]/12 py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Why Password Security Matters</h2>
@@ -389,12 +389,12 @@ export default function PasswordGenerator() {
                   value: "3.5B",
                   label: "accounts protected by strong, unique passwords",
                   icon: Lock,
-                  color: "text-[#059669]",
-                  iconColor: "text-[#059669]",
-                  iconBg: "bg-[#059669]/10",
+                  color: "text-[#1e5f74]",
+                  iconColor: "text-[#1e5f74]",
+                  iconBg: "bg-[#1e5f74]/10",
                 },
               ].map(({ value, label, icon: Icon, color, iconColor, iconBg }) => (
-                <div key={value} className="bg-white border border-[#059669]/14 rounded-2xl p-6 text-center">
+                <div key={value} className="bg-white border border-[#1e5f74]/14 rounded-2xl p-6 text-center">
                   <div className={`w-10 h-10 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center mx-auto mb-3`}>
                     <Icon size={20} />
                   </div>
@@ -448,7 +448,7 @@ export default function PasswordGenerator() {
                 },
               ].map(({ icon: Icon, title, body }) => (
                 <div key={title} className="tip-card">
-                  <div className="w-10 h-10 rounded-xl bg-[#059669]/10 text-[#059669] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#1e5f74]/10 text-[#1e5f74] flex items-center justify-center mb-4">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-bold text-slate-800 mb-2 text-sm">{title}</h3>
@@ -460,7 +460,7 @@ export default function PasswordGenerator() {
         </section>
 
         {/* ── SECTION E: MYTHS ── */}
-        <section className="bg-[#ecfdf5] py-20 px-6">
+        <section className="bg-[#eaf6f4] py-20 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Password Myths — Debunked</h2>
@@ -492,7 +492,7 @@ export default function PasswordGenerator() {
                       <XCircle size={12} /> MYTH
                     </span>
                     <p className="text-slate-700 font-semibold text-sm mb-3">{myth}</p>
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669] bg-[#059669]/08 border border-[#059669]/20 px-2.5 py-1 rounded-full mb-2">
+                    <span className="inline-flex items-center gap-1 text-xs font-bold text-[#1e5f74] bg-[#1e5f74]/08 border border-[#1e5f74]/20 px-2.5 py-1 rounded-full mb-2">
                       <CheckCircle size={12} /> TRUTH
                     </span>
                     <p className="text-slate-600 text-sm leading-relaxed">{truth}</p>
@@ -524,7 +524,7 @@ export default function PasswordGenerator() {
             <p className="text-white/80 mb-8 text-lg">Cryptographically random. Never stored. Always free.</p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="bg-white text-[#059669] font-bold px-8 py-4 rounded-2xl text-base shadow-lg hover:shadow-xl hover:bg-[#f0fdf4] transition-all">
+              className="bg-white text-[#1e5f74] font-bold px-8 py-4 rounded-2xl text-base shadow-lg hover:shadow-xl hover:bg-[#f0fdf4] transition-all">
               Generate Password Now
             </button>
             <p className="text-white/60 text-sm mt-6">Web Crypto API · 0 bytes uploaded · 100% free</p>

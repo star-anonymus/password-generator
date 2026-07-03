@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useMemo } from "react";
 import { Eye, EyeOff, Shield, AlertTriangle, CheckCircle, XCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -44,8 +44,8 @@ function getStrength(entropy: number) {
   if (entropy < 28) return { label: "Very Weak",  color: "#ef4444", width: "10%" };
   if (entropy < 36) return { label: "Weak",       color: "#f97316", width: "28%" };
   if (entropy < 60) return { label: "Fair",       color: "#eab308", width: "50%" };
-  if (entropy < 80) return { label: "Strong",     color: "#059669", width: "75%" };
-  return               { label: "Very Strong", color: "#0d9488", width: "100%" };
+  if (entropy < 80) return { label: "Strong",     color: "#1e5f74", width: "75%" };
+  return               { label: "Very Strong", color: "#5ca834", width: "100%" };
 }
 
 export default function StrengthChecker() {
@@ -73,7 +73,7 @@ export default function StrengthChecker() {
               placeholder="Enter your password..."
               value={pw}
               onChange={(e) => setPw(e.target.value)}
-              className="w-full border-2 border-[#059669]/20 rounded-2xl px-5 py-4 text-lg font-mono outline-none focus:border-[#059669] focus:ring-4 focus:ring-[#059669]/10 pr-14 transition-all"
+              className="w-full border-2 border-[#1e5f74]/20 rounded-2xl px-5 py-4 text-lg font-mono outline-none focus:border-[#1e5f74] focus:ring-4 focus:ring-[#1e5f74]/10 pr-14 transition-all"
             />
             <button onClick={() => setShow(!show)}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700">
@@ -84,7 +84,7 @@ export default function StrengthChecker() {
           {pw && (
             <>
               {/* Score card */}
-              <div className="rounded-2xl border border-[#059669]/15 bg-white p-6 mb-5 card-shadow">
+              <div className="rounded-2xl border border-[#1e5f74]/15 bg-white p-6 mb-5 card-shadow">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <p className="text-xs text-slate-400 mb-0.5">Strength</p>
@@ -110,13 +110,13 @@ export default function StrengthChecker() {
               <div className="rounded-2xl border border-slate-200 bg-white p-5 card-shadow">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="font-bold text-slate-800">Security Checklist</h2>
-                  <span className="text-sm font-semibold text-[#059669]">{passed}/{checks.length} passed</span>
+                  <span className="text-sm font-semibold text-[#1e5f74]">{passed}/{checks.length} passed</span>
                 </div>
                 <ul className="space-y-2.5">
                   {checks.map(({ label, pass }) => (
                     <li key={label} className="flex items-center gap-3">
                       {pass
-                        ? <CheckCircle size={16} className="text-[#059669] shrink-0" />
+                        ? <CheckCircle size={16} className="text-[#1e5f74] shrink-0" />
                         : <XCircle    size={16} className="text-red-400 shrink-0" />}
                       <span className={`text-sm ${pass ? "text-slate-700" : "text-slate-400"}`}>{label}</span>
                     </li>
@@ -136,7 +136,7 @@ export default function StrengthChecker() {
           )}
 
           {!pw && (
-            <div className="rounded-xl border border-dashed border-[#059669]/25 p-12 text-center text-slate-400">
+            <div className="rounded-xl border border-dashed border-[#1e5f74]/25 p-12 text-center text-slate-400">
               Type a password above to analyse its strength
             </div>
           )}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -10,14 +10,14 @@ export default function FAQSection({ items }: { items: Item[] }) {
       {items.map((item, i) => (
         <div key={i} className="faq-item">
           <button
-            className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-[#059669]/02 transition-colors"
+            className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-[#1e5f74]/02 transition-colors"
             onClick={() => setOpen(open === i ? null : i)}
           >
             <span className="font-semibold text-slate-800 text-sm leading-snug">{item.q}</span>
-            <ChevronDown size={18} className={`text-[#059669] shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`} />
+            <ChevronDown size={18} className={`text-[#1e5f74] shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`} />
           </button>
           <div className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-96" : "max-h-0"}`}>
-            <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-[#059669]/08 pt-4">{item.a}</p>
+            <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-[#1e5f74]/08 pt-4">{item.a}</p>
           </div>
         </div>
       ))}
